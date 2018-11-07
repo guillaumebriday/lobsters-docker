@@ -1,3 +1,8 @@
+[![Docker build status](https://img.shields.io/docker/build/guillaumebriday/lobsters-docker.svg)](https://hub.docker.com/r/guillaumebriday/lobsters-docker/)
+[![Docker Automated build](https://img.shields.io/docker/automated/guillaumebriday/lobsters-docker.svg)](https://hub.docker.com/r/guillaumebriday/lobsters-docker/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/guillaumebriday/lobsters-docker.svg)](https://hub.docker.com/r/guillaumebriday/lobsters-docker/)
+[![Docker Stars](https://img.shields.io/docker/stars/guillaumebriday/lobsters-docker.svg)](https://hub.docker.com/r/guillaumebriday/lobsters-docker/)
+
 # Lobsters in a Docker container
 
 This repo is designed to automatically build an image of [Lobsters](https://github.com/lobsters/lobsters) to use it in a production environmment on Docker.
