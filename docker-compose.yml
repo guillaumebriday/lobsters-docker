@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  lobsters-db:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=lobsters
+    volumes:
+      - ./my/own/datadir:/var/lib/mysql
+
+  lobsters:
+    image: guillaumebriday/lobsters-docker
+    environment:
+      - RAILS_SERVE_STATIC_FILES=true
+    ports:
+      - "3000:3000"
+    depends_on:
+      - lobsters-db
