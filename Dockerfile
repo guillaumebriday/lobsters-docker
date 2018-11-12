@@ -49,6 +49,7 @@ RUN git pull origin master
 
 # Copy the config in the container
 COPY ./config /lobsters/config
+COPY ./public/ /lobsters/public
 COPY docker-entrypoint.sh /usr/local/bin/
 
 RUN gem install bundler
