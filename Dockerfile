@@ -1,4 +1,4 @@
-FROM ruby:2.3
+FROM ruby:2.3-slim
 LABEL maintainer="hello@guillaumebriday.fr"
 
 # Set our working directory.
@@ -29,6 +29,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     apt-transport-https \
     mysql-client \
+    default-libmysqlclient-dev \
     git \
     curl \
     bash \
