@@ -44,7 +44,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Cloning the project
 RUN git init
-RUN git remote add origin https://github.com/lobsters/lobsters.git
+RUN git remote add origin https://github.com/guillaumebriday/lobsters.git
 RUN git pull origin master
 
 # Copy the config in the container
