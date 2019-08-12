@@ -42,41 +42,11 @@ $ docker run --name lobsters --link lobsters-db -e "RAILS_SERVE_STATIC_FILES=tru
 
 ## Docker compose
 
-You can use this docker compose for this project. Create a `docker-compose.yml` file :
-
-```yml
-version: '3.1'
-
-services:
-  lobsters-db:
-    image: mysql:5.7
-    environment:
-      - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=lobsters
-    volumes:
-      - ./my/own/datadir:/var/lib/mysql
-
-  lobsters:
-    image: guillaumebriday/lobsters-docker
-    environment:
-      - RAILS_SERVE_STATIC_FILES=true
-    ports:
-      - "3000:3000"
-    depends_on:
-      - lobsters-db
-```
-
-And then run :
+You can use this docker compose for this project:
 
 ```bash
 $ docker-compose up -d
 ```
-
-## Reverse proxy
-
-You can use [Traefik](https://traefik.io/) or [jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy) to access your application on custom domain.
-
-In this case, remove the ports binding in the `docker-compose.yml` or in the `docker run` command.
 
 ## Administration
 
