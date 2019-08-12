@@ -7,9 +7,10 @@ services:
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=lobsters
     volumes:
-      - ./my/own/datadir:/var/lib/mysql
+      - db-data:/var/lib/mysql
 
   lobsters:
+    build: .
     image: guillaumebriday/lobsters-docker
     environment:
       - RAILS_SERVE_STATIC_FILES=true
@@ -17,3 +18,6 @@ services:
       - "3000:3000"
     depends_on:
       - lobsters-db
+
+volumes:
+  db-data:

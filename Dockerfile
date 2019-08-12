@@ -1,24 +1,21 @@
 FROM ruby:2.3-slim
-LABEL maintainer="hello@guillaumebriday.fr"
+LABEL maintainer="guillaumebriday@gmail.com"
 
 # Set our working directory.
 WORKDIR /lobsters
 
 # Setting env up
 ENV RAILS_ENV="production" \
-    RACK_ENV="production"
-
-ENV DB_HOST="lobsters-db" \
+    RACK_ENV="production" \
+    DB_HOST="lobsters-db" \
     DB_PASSWORD="password" \
     DB_USER="root" \
-    DB_DATABASE="lobsters"
-
-ENV APP_DOMAIN="example.com" \
+    DB_DATABASE="lobsters" \
+    APP_DOMAIN="example.com" \
     APP_NAME="Example News" \
     SECRET_KEY_BASE="" \
-    X_SENDFILE_HEADER=""
-
-ENV SMTP_HOST="127.0.0.1" \
+    X_SENDFILE_HEADER="" \
+    SMTP_HOST="127.0.0.1" \
     SMTP_PORT="25" \
     SMTP_STARTTLS_AUTO="true" \
     SMTP_USERNAME="" \
@@ -33,7 +30,8 @@ RUN apt-get update && apt-get install -y \
     git \
     curl \
     bash \
-    nodejs
+    nodejs \
+    gnupg
 
 # Installing Yarn
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
