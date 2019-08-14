@@ -33,19 +33,17 @@ More informations: [https://edgeguides.rubyonrails.org/configuring.html#configur
 
 ## Starting the containers
 
-Change or add the environmment variables to suit your needs :
+Change or add the environmment variables to suit your needs, then run:
 
 ```bash
 # Starting the mysql container
 $ docker run --name lobsters-db -v /my/own/datadir:/var/lib/mysql -e "MYSQL_ROOT_PASSWORD=password" -e "MYSQL_DATABASE=lobsters" -d mysql:5.7
 
 # Starting the lobsters container
-$ docker run --name lobsters --link lobsters-db -e "RAILS_SERVE_STATIC_FILES=true" -p 3000:3000 -d guillaumebriday/lobsters-docker
+$ docker run --name lobsters --link lobsters-db -p 3000:3000 -d guillaumebriday/lobsters-docker
 ```
 
-## Docker compose
-
-You can use this docker compose for this project:
+You can use this docker-compose for this project:
 
 ```bash
 $ docker-compose up -d
@@ -60,11 +58,10 @@ In lobsters, as mentioned in the documentation:
 To open a console in production:
 
 ```bash
-$ docker run --rm -i --link lobsters-db guillaumebriday/lobsters-docker
+$ docker run --rm -it --link lobsters-db guillaumebriday/lobsters-docker bundle exec rails c
 
 # Or with docker-compose
-
-$ docker-compose run --rm lobsters rails c
+$ docker-compose run --rm lobsters bundle exec rails c
 ```
 
 ## Credits
