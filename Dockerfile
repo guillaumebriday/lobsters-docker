@@ -7,6 +7,7 @@ WORKDIR /lobsters
 # Setting env up
 ENV RAILS_ENV="production" \
     RACK_ENV="production" \
+    RAILS_SERVE_STATIC_FILES="true" \
     DATABASE_URL="mysql2://root:password@lobsters-db/lobsters" \
     APP_DOMAIN="example.com" \
     APP_NAME="Example News" \

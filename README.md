@@ -22,7 +22,7 @@ More informations: [https://edgeguides.rubyonrails.org/configuring.html#configur
 + `-e APP_NAME` Defaults to "Example News". This should be your application name.
 + `-e SECRET_KEY_BASE` Defaults to "". If empty a generic key will be generated.
 + `-e X_SENDFILE_HEADER` Defaults to "". [Specifies the header that your server uses for sending files](https://guides.rubyonrails.org/asset_pipeline.html#x-sendfile-headers).
-+ `-e RAILS_SERVE_STATIC_FILES` Defaults to undefined. If present then Puma will serve static asset.
++ `-e RAILS_SERVE_STATIC_FILES` Defaults to "true". If present then Puma will serve static asset.
 
 ### Email
 + `-e SMTP_HOST` Defaults to "127.0.0.1".

@@ -12,8 +12,6 @@ services:
   lobsters:
     build: .
     image: guillaumebriday/lobsters-docker
-    environment:
-      - RAILS_SERVE_STATIC_FILES=true
     ports:
       - "3000:3000"
     depends_on:
