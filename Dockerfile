@@ -7,10 +7,7 @@ WORKDIR /lobsters
 # Setting env up
 ENV RAILS_ENV="production" \
     RACK_ENV="production" \
-    DB_HOST="lobsters-db" \
-    DB_PASSWORD="password" \
-    DB_USER="root" \
-    DB_DATABASE="lobsters" \
+    DATABASE_URL="mysql2://root:password@lobsters-db/lobsters" \
     APP_DOMAIN="example.com" \
     APP_NAME="Example News" \
     SECRET_KEY_BASE="" \

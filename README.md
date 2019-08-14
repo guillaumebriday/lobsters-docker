@@ -9,10 +9,13 @@ This repo is designed to automatically build an image of [Lobsters](https://gith
 ## Environment variables
 
 ### Database
-+ `-e DB_HOST` Defaults to "lobsters-db". This should be the name of the mysql container.
-+ `-e DB_PASSWORD` Defaults to "password". Required. This is the password of the database to use.
-+ `-e DB_USER` Defaults to "root". This is the name of the database user to use.
-+ `-e DB_DATABASE` Defaults to "lobsters". This is the name of the database to use.
++ `-e DATABASE_URL` Defaults to "`mysql2://root:password@lobsters-db/lobsters`".
+
+Where `mysql2` is the adapter, `root` is the username, `password` is the password, `lobsters-db` is the host, and `lobsters` the name of database.
+
+In this example, `lobsters-db` should be the name of the mysql container.
+
+More informations: [https://edgeguides.rubyonrails.org/configuring.html#configuring-a-database](https://edgeguides.rubyonrails.org/configuring.html#configuring-a-database)
 
 ### Application
 + `-e APP_DOMAIN` Defaults to "example.com". This should be your domain name.
